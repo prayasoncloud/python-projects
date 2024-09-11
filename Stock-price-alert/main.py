@@ -4,46 +4,60 @@ STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
 
 API_KEY_STOCK = "QA13QMWBH2DKHI7G"
-
 API_KEY_NEWS = "da07f2541c744da9bfdaf1a028761cb2"
 
-# parameters = {
+
+
+# stock= "https://www.alphavantage.co/"
+
+# parameters_stock = {
 #     "function": "TIME_SERIES_DAILY",
 #     "symbol": "TSLA",
 #     "apikey": API_KEY_STOCK
 # }
 
-# response = requests.get(url="https://www.alphavantage.co/query?", params=parameters)
+# response = requests.get(url="https://www.alphavantage.co/query?", params=parameters_stock)
 # response.raise_for_status()
-# tsla_data = response.json()
+# tsla_data_raw = response.json()
+# tsla_data = tsla_data_raw["Time Series (Daily)"]
 
 # def percentage_finder():
-#     tsla_data = tsla_data["Time Series (Daily)"]
+#     tsla_data = tsla_data_raw["Time Series (Daily)"]
 
-#     tsla_data = iter(tsla_data)
-#     day1 = next(tsla_data)
-#     day2 = next(tsla_data)
+#     tsla_data_iter = iter(tsla_data)
+#     day1 = next(tsla_data_iter)
+#     day2 = next(tsla_data_iter)
+#     day1 = tsla_data[day1]["4. close"]
+#     day2 = tsla_data[day2]["4. close"]
 
-#     diff = day1 - day2
-#     percentage = (diff * 100) / day2 
+#     diff = float(day1) - float(day2)
+#     percentage = (diff * 100) / float(day2) 
 #     return percentage
 
-# stock= "https://www.alphavantage.co/"
+
+
+
+
 
 # News= "https://newsapi.org/"
 
-param = {
+
+
+
+
+parameters_news = {
     "apikey": API_KEY_NEWS,
     "category": "business"
 }
-response = requests.get(url="https://newsapi.org/v2/top-headlines?", params=param)
+response = requests.get(url="https://newsapi.org/v2/top-headlines?", params=parameters_news)
 response.raise_for_status()
 news_data = response.json()
+
 print(f"news data is a {type(news_data)}")
+
 
 headline = news_data["articles"][0]["title"]
 
-print(f"Headline is a {type(headline)}")
 
 print(headline)
 
