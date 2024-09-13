@@ -3,8 +3,8 @@ from datetime import datetime, timedelta
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
 
-API_KEY_STOCK = "QA13QMWBH2DKHI7G"
-API_KEY_NEWS = "da07f2541c744da9bfdaf1a028761cb2"
+API_KEY_STOCK = "" #please have a look here 
+API_KEY_NEWS = "" #please have a look here 
 
 
 

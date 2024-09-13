@@ -4,7 +4,7 @@ import random
 import datetime as dt
 
 MY_EMAIL = "prayaspatel199@gmail.com"
-MY_PASS = "***** "
+MY_PASS = ""
 
 data = pandas.read_csv("birthdays.csv")
 birthdays_dictionary = {(data_row["month"], data_row["day"]): data_row for (index, data_row) in data.iterrows()}

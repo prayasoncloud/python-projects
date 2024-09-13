@@ -1,7 +1,7 @@
 import requests
 
 URL = "https://pixe.la/v1/users"
-TOKEN = "wqoidjkjcasc"
+TOKEN = ""
 
 
 body = {
